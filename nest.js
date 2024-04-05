@@ -1,6 +1,8 @@
 import http from 'k6/http';
 import { group } from 'k6';
 
+const host = 'localhost'
+
 export const options = {
     scenarios: {
         users: {
@@ -21,7 +23,7 @@ export function serial() {
             };
 
             // Make an authenticated request
-            const response = http.get('http://localhost:4200', { headers: headers });
+            const response = http.get(`http://${host}:4200`, { headers: headers });
             console.log(`User ${__VU}: Request ${__ITER + 1} - Status code: ${response.status}`);
         });
     }
@@ -43,7 +45,7 @@ export function paralel() {
     for (let i = 0; i < numRequests; i++) {
         requests.push({
             method: 'GET',
-            url: 'http://localhost:4200',
+            url: `http://${host}:4200`,
             headers: headers,
         });
     }
