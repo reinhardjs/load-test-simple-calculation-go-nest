@@ -8,14 +8,14 @@ export const options = {
     scenarios: {
         scenario1: {
             executor: 'constant-vus',
-            vus: 200,
+            vus: 100,
             duration: '10s', // Total test duration
             gracefulStop: '30s'
         },
     },
 };
 
-export default function () {
+export default async function () {
     // Define your request headers with the JWT token
     const headers = {
         'Content-Type': 'application/json',
@@ -23,5 +23,5 @@ export default function () {
 
     // Make an authenticated request
     const response = http.get(`http://${host}:${port}`, { headers: headers });
-    console.log(`User ${__VU}: Request ${__ITER + 1} - Status code: ${response.status}`);
+    console.log(`User ${__VU}: Request ${__ITER} - Status code: ${response.status}`);
 }
