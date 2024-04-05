@@ -21,7 +21,6 @@ export function serial() {
             };
 
             // Make an authenticated request
-            // const response = http.get('http://localhost:4200/api/v1/buyback/16eb8d7f-79ef-48c3-8268-2e62fb328154/detail', { headers: headers });
             const response = http.get('http://localhost:4200', { headers: headers });
             console.log(`User ${__VU}: Request ${__ITER + 1} - Status code: ${response.status}`);
         });
