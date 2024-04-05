@@ -1,16 +1,20 @@
 import http from 'k6/http';
 import { group } from 'k6';
 
-const host = 'localhost'
+// 103.172.204.152
+const host = '103.172.204.152'
+const port = '8080'
 
 export const options = {
     scenarios: {
-        users: {
+        scenario1: {
             executor: 'constant-vus',
+            vus: 1,
             duration: '1s', // Total test duration
+            gracefulStop: '10s',
             exec: 'paralel'
-        }
-    }
+        },
+    },
 };
 
 export function serial() {
@@ -23,7 +27,7 @@ export function serial() {
             };
 
             // Make an authenticated request
-            const response = http.get(`http://${host}:8080`, { headers: headers });
+            const response = http.get(`http://${host}:${port}`, { headers: headers });
             console.log(`User ${__VU}: Request ${__ITER + 1} - Status code: ${response.status}`);
         });
     }
@@ -45,7 +49,7 @@ export function paralel() {
     for (let i = 0; i < numRequests; i++) {
         requests.push({
             method: 'GET',
-            url: `http://${host}:8080`,
+            url: `http://${host}:${port}`,
             headers: headers,
         });
     }
