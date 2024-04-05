@@ -55,6 +55,6 @@ export function paralel() {
 
     // Print the responses
     responses.forEach((res, index) => {
-        console.log(`Response ${index}: Status code: ${res.status}`);
+        console.log(`Response ${index+1}: Status code: ${res.status}`);
     });
 }
