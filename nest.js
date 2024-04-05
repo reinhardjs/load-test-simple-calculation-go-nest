@@ -8,8 +8,8 @@ export const options = {
     scenarios: {
         scenario1: {
             executor: 'constant-vus',
-            vus: 100,
-            duration: '10s', // Total test duration
+            vus: 200,
+            duration: '3s', // Total test duration
             gracefulStop: '30s'
         },
     },
