@@ -1,14 +1,14 @@
 import http from 'k6/http';
 
 // 103.172.204.152
-const host = '103.172.204.152'
+const host = 'localhost'
 const port = '8080'
 
 export const options = {
     scenarios: {
         scenario1: {
             executor: 'constant-vus',
-            vus: 200,
+            vus: 100,
             duration: '3s', // Total test duration
             gracefulStop: '30s'
         },
