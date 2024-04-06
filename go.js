@@ -7,6 +7,8 @@ const port = '8080'
 export const options = {
     scenarios: {
         // rampingScenario: {
+        //     executor: 'ramping-arrival-rate',
+        //     preAllocatedVUs: 1000,
         //     stages: [
         //         { duration: '5s', target: 1000 },
         //         { duration: '5s', target: 1000 },
