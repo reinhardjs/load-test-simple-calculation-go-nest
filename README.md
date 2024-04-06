@@ -12,6 +12,9 @@ k6 run go.js
 </br>
 
 ## How to run nest js
+
+Go inside `./nest` directory, then run
+
 ```
 yarn
 ```
@@ -24,6 +27,9 @@ yarn start
 
 
 ## How to run go
+
+Go inside `./go` directory, then run
+
 ```
 go mod tidy
 ```
