@@ -8,9 +8,11 @@ export const options = {
     scenarios: {
         // rampingScenario: {
         //     executor: 'ramping-arrival-rate',
+        //     startRate: 500,
         //     preAllocatedVUs: 1000,
         //     stages: [
-        //         { duration: '5s', target: 1000 },
+        //         { duration: '2s', target: 500 },
+        //         { duration: '3s', target: 1000 },
         //         { duration: '5s', target: 1000 },
         //     ],
         //     exec: 'serial',
