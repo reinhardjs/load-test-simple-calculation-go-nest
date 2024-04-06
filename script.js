@@ -5,14 +5,15 @@ export const options = {
   // Key configurations for Stress in this section
   stages: [
     { duration: '5s', target: 1000 },
-    { duration: '5s', target: 2000 },
+    { duration: '5s', target: 1000 },
     { duration: '5s', target: 0 },
   ],
 };
 
 export default () => {
-  const urlRes = http.get('http://103.172.204.152:8080');
-  sleep(1);
+  const response = http.get('http://103.172.204.152:8080');
+  console.log("body:", response.body, " status:", response.status)
+  sleep(0);
   // MORE STEPS
   // Here you can have more steps or complex script
   // Step1
