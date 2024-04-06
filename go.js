@@ -27,7 +27,7 @@ export const options = {
     },
 };
 
-export default function serial() {
+export function serial() {
     // Define your request headers with the JWT token
     const headers = {
         'Content-Type': 'application/json',
