@@ -6,10 +6,9 @@ const port = '4200'
 
 export const options = {
     stages: [
+        { duration: '1s', target: 500 },
         { duration: '2s', target: 1000 },
-        { duration: '3s', target: 1500 },
-        { duration: '10s', target: 1500 },
-        { duration: '5s', target: 0 },
+        { duration: '5s', target: 1500 },
     ],
     // scenarios: {
     //     scenario1: {
