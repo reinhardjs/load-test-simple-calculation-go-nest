@@ -18,7 +18,7 @@ export const options = {
         //     exec: 'serial',
         // },
         constantScenario: {
-            vus: 1000,
+            vus: 100,
             executor: 'constant-vus',
             duration: '30s', // Total test duration
             gracefulStop: '30s', // wait for iterations to finish in the end
