@@ -37,7 +37,7 @@ export function paralel() {
     let requests = [];
 
     // Define the number of parallel requests
-    const numRequests = 10;
+    const numRequests = 1000;
 
     // Populate the requests array with the requests
     for (let i = 0; i < numRequests; i++) {
