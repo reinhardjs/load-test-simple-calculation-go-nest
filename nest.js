@@ -16,11 +16,11 @@ export const options = {
         //     exec: 'serial',
         // },
         constantScenario: {
-            vus: 1,
+            vus: 1000,
             executor: 'constant-vus',
             duration: '1s', // Total test duration
             gracefulStop: '60s',
-            exec: 'paralel',
+            exec: 'serial',
         },
     },
 };
