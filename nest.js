@@ -20,8 +20,8 @@ export const options = {
         constantScenario: {
             vus: 1000,
             executor: 'constant-vus',
-            duration: '1s', // Total test duration
-            gracefulStop: '60s',
+            duration: '30s', // Total test duration
+            gracefulStop: '30s', // wait for iterations to finish in the end
             exec: 'serial',
         },
     },
