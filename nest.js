@@ -1,22 +1,27 @@
 import http from 'k6/http';
 
 // 103.172.204.152
-const host = 'localhost'
+const host = '103.172.204.152'
 const port = '4200'
 
 export const options = {
-    scenarios: {
-        scenario1: {
-            executor: 'constant-vus',
-            vus: 1,
-            duration: '5s', // Total test duration
-            gracefulStop: '30s',
-            exec: 'serial',
-        },
-    },
+    stages: [
+        { duration: '2s', target: 1000 },
+        { duration: '3s', target: 1500 },
+        { duration: '10s', target: 1500 },
+        { duration: '5s', target: 0 },
+    ],
+    // scenarios: {
+    //     scenario1: {
+    //         executor: 'constant-vus',
+    //         duration: '5s', // Total test duration
+    //         gracefulStop: '30s',
+    //         exec: 'serial',
+    //     },
+    // },
 };
 
-export function serial () {
+export default function serial() {
     // Define your request headers with the JWT token
     const headers = {
         'Content-Type': 'application/json',
