@@ -5,19 +5,22 @@ const host = '103.172.204.152'
 const port = '4200'
 
 export const options = {
-    stages: [
-        { duration: '1s', target: 500 },
-        { duration: '2s', target: 1000 },
-        { duration: '5s', target: 1500 },
-    ],
-    // scenarios: {
-    //     scenario1: {
-    //         executor: 'constant-vus',
-    //         duration: '5s', // Total test duration
-    //         gracefulStop: '30s',
-    //         exec: 'serial',
-    //     },
-    // },
+    scenarios: {
+        // rampingScenario: {
+        //     stages: [
+        //         { duration: '5s', target: 1000 },
+        //         { duration: '5s', target: 1000 },
+        //     ],
+        //     exec: 'serial',
+        // },
+        constantScenario: {
+            vus: 1,
+            executor: 'constant-vus',
+            duration: '1s', // Total test duration
+            gracefulStop: '60s',
+            exec: 'paralel',
+        },
+    },
 };
 
 export default function serial() {
