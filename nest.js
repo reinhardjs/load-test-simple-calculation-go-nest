@@ -54,7 +54,7 @@ export function paralel() {
     for (let i = 0; i < numRequests; i++) {
         requests.push({
             method: 'GET',
-            url: `http://${host}:8080`,
+            url: `http://${host}:${port}`,
             headers: headers,
         });
     }

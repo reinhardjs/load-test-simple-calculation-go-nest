@@ -1,7 +1,7 @@
 import http from 'k6/http';
 
 // 103.172.204.152
-const host = '103.172.204.152'
+const host = 'localhost'
 const port = '8080'
 
 export const options = {
@@ -18,11 +18,11 @@ export const options = {
         //     exec: 'serial',
         // },
         constantScenario: {
-            vus: 100, // each VUs run exec iteration func concurrently
+            vus: 1, // each VUs run exec iteration func concurrently
             executor: 'constant-vus',
-            duration: '30s', // Total test duration
+            duration: '5s', // Total test duration
             gracefulStop: '30s', // wait for iterations to finish in the end
-            exec: 'serial',
+            exec: 'paralel',
         },
     },
 };
@@ -54,7 +54,7 @@ export function paralel() {
     for (let i = 0; i < numRequests; i++) {
         requests.push({
             method: 'GET',
-            url: `http://${host}:8080`,
+            url: `http://${host}:${port}`,
             headers: headers,
         });
     }
