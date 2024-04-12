@@ -20,7 +20,7 @@ export const options = {
         constantScenario: {
             vus: 100, // each VUs run exec iteration func concurrently
             executor: 'constant-vus',
-            duration: '30s', // Total test duration
+            duration: '10s', // Total test duration
             gracefulStop: '30s', // wait for iterations to finish in the end
             exec: 'serial',
         },
