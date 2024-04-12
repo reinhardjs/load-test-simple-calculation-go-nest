@@ -18,11 +18,11 @@ export const options = {
         //     exec: 'serial',
         // },
         constantScenario: {
-            vus: 1, // each VUs run exec iteration func concurrently
+            vus: 100, // each VUs run exec iteration func concurrently
             executor: 'constant-vus',
             duration: '5s', // Total test duration
             gracefulStop: '30s', // wait for iterations to finish in the end
-            exec: 'paralel',
+            exec: 'serial',
         },
     },
 };
