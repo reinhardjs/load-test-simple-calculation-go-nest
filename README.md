@@ -37,3 +37,11 @@ go mod tidy
 ```
 go run main.go
 ```
+
+## How to run rust
+
+Go inside `./rust` directory, then run
+
+```
+cargo r -r
+```
