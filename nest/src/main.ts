@@ -4,8 +4,8 @@ import { AppModule } from './app.module';
 const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
 
-async function bootstrap() {
-    const app = await NestFactory.create(AppModule);
+async function clusteredNestBootstrap() {
+    const app = await NestFactory.create(AppModule)
 
     if (cluster.isMaster) {
         console.log(`Master ${process.pid} is running`);
@@ -23,4 +23,11 @@ async function bootstrap() {
         await app.listen(port);
     }
 }
-bootstrap()
+
+async function nonClusteredNestBootstrap(){
+	const app = await NestFactory.create(AppModule);
+	const port = process.env.PORT || 4200;
+	await app.listen(port);
+}
+
+nonClusteredNestBootstrap()
