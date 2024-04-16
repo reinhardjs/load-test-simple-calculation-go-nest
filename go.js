@@ -1,7 +1,7 @@
 import http from 'k6/http';
 
 // 103.172.204.152
-const host = 'localhost'
+const host = '103.172.204.152'
 const port = '8080'
 
 export const options = {
@@ -18,7 +18,7 @@ export const options = {
         //     exec: 'serial',
         // },
         constantScenario: {
-            vus: 100, // each VUs run exec iteration func concurrently
+            vus: 200, // each VUs run exec iteration func concurrently
             executor: 'constant-vus',
             duration: '10s', // Total test duration
             gracefulStop: '30s', // wait for iterations to finish in the end
