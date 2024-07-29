@@ -14,4 +14,9 @@ export class AppController {
     }
     return count + ""
   }
+
+  @Get('worker')
+  async calculateWithWorker(): Promise<number> {
+    return await this.appService.calculateWithWorker()
+  }
 }
