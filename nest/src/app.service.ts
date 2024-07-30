@@ -16,6 +16,6 @@ export class AppService {
   }
 
   calculateWithWorker(): Promise<number> {
-    return this.workerService.performTask(100);
+    return this.workerService.executeTask('this is a task');
   }
 }
