@@ -20,7 +20,7 @@ export class WorkerService implements OnModuleDestroy {
   }
 
   private addWorker() {
-    const worker = new Worker('./worker.js');
+    const worker = new Worker('./src/worker.js');
     worker.on('message', (result) => this.handleWorkerResult(worker, result));
     worker.on('error', (error) => this.handleWorkerError(worker, error));
     worker.on('exit', (code) => this.handleWorkerExit(worker, code));

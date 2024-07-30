@@ -1,8 +1,8 @@
 // src/worker.ts
-import { parentPort } from 'worker_threads';
+const { parentPort } = require('worker_threads');
 
 // Listen for messages from the parent thread
-parentPort?.on('message', async (task: { iterations: number }) => {
+parentPort?.on('message', async (task) => {
   // ignore iterations
 
   // Perform CPU intensive task
